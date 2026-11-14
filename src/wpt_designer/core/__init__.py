@@ -1,0 +1,111 @@
+"""
+Computational Physics and Circuit Core for WPT Design.
+"""
+
+from .constants import (
+    MU_0,
+    RHO_CU,
+    FERRITE_CLEARANCE_M,
+    FERRITE_OVERHANG_M,
+    FERRITE_REFLECT,
+    FERRITE_LEAK,
+    IMAGE_MIN_WEIGHT,
+    LITZ_PACKING,
+    LITZ_SERVING_M,
+    TURN_GAP_M,
+    COIL_CLEARANCE_M,
+)
+from .winding import (
+    Winding,
+    min_coil_gap_m,
+)
+from .inductance import (
+    image_ops,
+    winding_sources,
+    calc_inductance,
+    calc_mutual_inductance_fast,
+)
+from .ac_losses import (
+    skin_factor,
+    proximity_geometry,
+    calc_litz_resistance,
+    winding_resistances,
+    calc_Q,
+)
+from .circuit_ss import (
+    calc_coupling,
+    calc_critical_coupling,
+    calc_optimal_coupling,
+    find_optimal_tracking_freq,
+    solve_ss_wpt_circuit,
+    solve_ss_frequency_sweep,
+)
+from .field import (
+    ferrite_shield_mask,
+    compute_2d_multi_turn_field,
+    compute_flux_function_Psi,
+    compute_2d_field_and_psi,
+    compute_3d_multi_turn_field,
+    phasor_field_magnitude,
+    field_at_peak_instant,
+    find_peak_phase_currents,
+    AxisymmetricField2D,
+    Field3DInterpolator,
+    trace_streamline_3d,
+    trace_streamlines_batch_3d,
+)
+from .simulation import (
+    run_wpt_simulation,
+    compute_distance_sweep,
+    compute_distance_table,
+    compute_frequency_sweep,
+    format_markdown_report,
+)
+
+__all__ = [
+    "MU_0",
+    "RHO_CU",
+    "FERRITE_CLEARANCE_M",
+    "FERRITE_OVERHANG_M",
+    "FERRITE_REFLECT",
+    "FERRITE_LEAK",
+    "IMAGE_MIN_WEIGHT",
+    "LITZ_PACKING",
+    "LITZ_SERVING_M",
+    "TURN_GAP_M",
+    "COIL_CLEARANCE_M",
+    "Winding",
+    "min_coil_gap_m",
+    "image_ops",
+    "winding_sources",
+    "calc_inductance",
+    "calc_mutual_inductance_fast",
+    "skin_factor",
+    "proximity_geometry",
+    "calc_litz_resistance",
+    "winding_resistances",
+    "calc_Q",
+    "calc_coupling",
+    "calc_critical_coupling",
+    "calc_optimal_coupling",
+    "find_optimal_tracking_freq",
+    "solve_ss_wpt_circuit",
+    "solve_ss_frequency_sweep",
+    "ferrite_shield_mask",
+    "compute_2d_multi_turn_field",
+    "compute_flux_function_Psi",
+    "compute_2d_field_and_psi",
+    "compute_3d_multi_turn_field",
+    "phasor_field_magnitude",
+    "field_at_peak_instant",
+    "find_peak_phase_currents",
+    "AxisymmetricField2D",
+    "Field3DInterpolator",
+    "trace_streamline_3d",
+    "trace_streamlines_batch_3d",
+    "run_wpt_simulation",
+    "compute_distance_sweep",
+    "compute_distance_table",
+    "compute_frequency_sweep",
+    "format_markdown_report",
+]
